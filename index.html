@@ -106,8 +106,8 @@ function render(){
  ura.children[stand].classList.add('blank');
  document.getElementById('stnm').innerHTML=L[stand][0]+' &middot; '+L[stand][1];
  // live structural gate: front legible = 8, back legible = 8 - 1(the reader) = 7, Δ must be 1
- var front=L.length;
- var back=L.length-ura.querySelectorAll('.row.blank').length;
+ var front=omote.querySelectorAll('.row').length;
+ var back=ura.querySelectorAll('.row:not(.blank)').length;
  var delta=front-back;
  var g=document.getElementById('gate');
  var ok=(delta===1)&&(front===8);
