@@ -74,7 +74,7 @@ h1{font-size:27px;font-weight:600;margin:0;letter-spacing:.01em}
 <div class="gate" id="gate"></div>
 
 <div class="ledger">
-<p><span class="tier l">LIT</span> The asymmetry is exact and recomputed live: the front shows all <b>8</b> layers; the reverse shows <b>7</b> &mdash; every layer but the one you occupy &mdash; so <b>front &minus; back = 1</b>, invariant across all eight standpoints. Completeness costs exactly one cell, and it is always the reader&rsquo;s. The gate turns red if that difference is ever &ne; 1.</p>
+<p><span class="tier l">LIT</span> The asymmetry is exact and recomputed live: the front shows all <b>9</b> layers; the reverse shows <b>8</b> &mdash; every layer but the one you occupy &mdash; so <b>front &minus; back = 1</b>, invariant across all nine standpoints. Completeness costs exactly one cell, and it is always the reader&rsquo;s. The gate turns red if that difference is ever &ne; 1.</p>
 <p><span class="tier">AMBER</span> &ldquo;reverse side&rdquo; and &ldquo;the reader&rdquo; are a <b>figure for an access asymmetry</b> &mdash; a sheet has two faces and a reader occupies one, so from where they stand the other cannot be read. It is structural, not experiential: no mind, no interior, no feeling is claimed for the blank cell. This is [[the-complete-hierarchy]]&rsquo;s own root wall read from the <em>near</em> side &mdash; ROOT0 held the far term (death) unwitnessed; the near term (the perceiver) is unwitnessable too, not because it is hidden far away but because it is where you are standing. Omote and ura, one sheet.</p>
 </div>
 
@@ -88,12 +88,12 @@ h1{font-size:27px;font-weight:600;margin:0;letter-spacing:.01em}
 </div>
 </div>
 <script>
-// the eight layers of the-complete-hierarchy (L0 deepest → L7 source), labels only
+// the nine sealed levels of the-complete-hierarchy (L−1 existence wall → L7 the atom), labels only
 var L=[
- ["L0","the root wall"],["L1","the wall, per domain"],["L2","the governing axes"],
- ["L3","lineage (+strata)"],["L4","the column"],["L5","the tone-wrapper algebra"],
- ["L6","the perceiver stack"],["L7","the source canon"]];
-var stand=0; // which layer you read FROM — the near term; default L0, the perceiver
+ ["L−1","the existence wall"],["L0","the root wall"],["L1","the wall, per domain"],
+ ["L2","the governing axes"],["L3","lineage (Vedic root)"],["L4","the column"],
+ ["L5","the tone-wrapper algebra"],["L6","the perceiver stack"],["L7","the atom · the beat"]];
+var stand=1; // which layer you read FROM — the near term; default L0, the perceiver's own wall
 var omote=document.getElementById('omote'),ura=document.getElementById('ura');
 function rowHTML(i,side){
  return '<div class="row" data-i="'+i+'"><span class="lc">'+L[i][0]+'</span><span class="lx">'+L[i][1]+'</span></div>';}
@@ -105,15 +105,15 @@ function render(){
  omote.children[stand].classList.add('stand');
  ura.children[stand].classList.add('blank');
  document.getElementById('stnm').innerHTML=L[stand][0]+' &middot; '+L[stand][1];
- // live structural gate: front legible = 8, back legible = 8 - 1(the reader) = 7, Δ must be 1
+ // live structural gate: front legible = 9, back legible = 9 - 1(the reader) = 8, Δ must be 1
  var front=omote.querySelectorAll('.row').length;
  var back=ura.querySelectorAll('.row:not(.blank)').length;
  var delta=front-back;
  var g=document.getElementById('gate');
- var ok=(delta===1)&&(front===8);
+ var ok=(delta===1)&&(front===9);
  g.className='gate'+(ok?'':' bad');
  g.innerHTML='structural gate &middot; front legible <b>'+front+'</b> &middot; reverse legible <b>'+back+
-   '</b> &middot; asymmetry &Delta; = <b>'+delta+'</b> '+(ok?'&middot; invariant across all 8 standpoints &middot; the cost of completeness is one cell, the reader&rsquo;s &middot; GATE OPEN'
+   '</b> &middot; asymmetry &Delta; = <b>'+delta+'</b> '+(ok?'&middot; invariant across all 9 standpoints &middot; the cost of completeness is one cell, the reader&rsquo;s &middot; GATE OPEN'
    :'&middot; MISWIRED &middot; GATE CLOSED');
  // wire clicks
  function bind(container){for(var i=0;i<container.children.length;i++){container.children[i].onclick=function(){stand=+this.getAttribute('data-i');render();};}}
